@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "69bcbf57-8026-478e-80c4-bcab143a8baf++6781",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "69bcbf57-8026-478e-80c4-bcab143a8baf++6781" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A35CF514-51A4-41DD-87A8-0968B7DB455C" : 0,
+    "69bcbf57-8026-478e-80c4-bcab143a8baf++6781" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "46DBDE26-0176-420D-83B9-6CEE1687638C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A35CF514-51A4-41DD-87A8-0968B7DB455C" : "upitch_git16:04:15",
+    "69bcbf57-8026-478e-80c4-bcab143a8baf++6781" : "XMPPUpitch_v1.1%202_pach\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "uPitch",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "uPitch.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/192.168.1.241\/svn\/upitch_iOS",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "69bcbf57-8026-478e-80c4-bcab143a8baf++6781"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/github.com\/CGTechnosoftdev\/uPitch.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A35CF514-51A4-41DD-87A8-0968B7DB455C"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CABC9C88-70FF-445E-AFFC-7526C08BC0AA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>uPitch</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>53E392DD2015ACE8808CB319A197FFC6AE58A7FE</key>
+		<string>github.com:CGTechnosoftdev/uPitch.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>uPitch.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>53E392DD2015ACE8808CB319A197FFC6AE58A7FE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:CGTechnosoftdev/uPitch.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>53E392DD2015ACE8808CB319A197FFC6AE58A7FE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>53E392DD2015ACE8808CB319A197FFC6AE58A7FE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>upitch_git</string>
+		</dict>
+	</array>
+</dict>
+</plist>
