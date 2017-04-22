@@ -16,7 +16,7 @@
 #import "viewPitchesViewController_Journalists.h"
 #import "ChoosePersonViewController.m"
 #import "ExpiryTimeViewController.h"
-
+#import "METoast.h"
 //Chat
 
 #import "DDLog.h"
@@ -312,6 +312,11 @@
      {
          
      }];
+}
+-(void)showToast:(NSString*)Message
+{
+    [METoast toastWithMessage:Message];
+    
 }
 -(IBAction)goPitchFeed:(id)sender
 {
@@ -975,8 +980,10 @@
          else
          {
              [self hideHUD];
-             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-             [alert show];
+//             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+//             [alert show];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:APPDELEGATE.window.rootViewController.navigationController.topViewController.view];
+
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];
@@ -1045,13 +1052,24 @@
          else
          {
              [self hideHUD];
-             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-             [alert show];
+            // [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:APPDELEGATE.window.rootViewController.navigationController.topViewController.view];
+
+//             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+//             [alert show];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];
     
     
+}
+-(void)deleteAccount:(UIViewController *)view
+{
+    UINavigationController *frontNavigationController = (id)view.revealViewController.frontViewController;
+    
+    [frontNavigationController.navigationController popToRootViewControllerAnimated:YES];
+    [self deleteAllChat];
+
 }
 //Chat
 #pragma mark Core Data

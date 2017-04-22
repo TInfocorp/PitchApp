@@ -402,7 +402,9 @@ NSComparisonResult dateSort(NSString *s1, NSString *s2, void *context) {
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *dictData = [mainArray objectAtIndex:indexPath.row];
+    NSDictionary *dictData = [[mainObjectArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    
+    
     [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     static NSString *SimpleTableIdentifier = @"chatTable";
@@ -512,7 +514,7 @@ NSComparisonResult dateSort(NSString *s1, NSString *s2, void *context) {
             
         }
     }
-    if ([[[mainArray objectAtIndex:indexPath.row] objectForKey:USERTYPE] isEqualToString:@"2"])
+    if ([[dictData objectForKey:USERTYPE] isEqualToString:@"2"])
     {
         [arrowImageView setImage:[UIImage imageNamed:@"Rounded Rectangle 5 copy 21.png"]];
         messageText.frame = CGRectMake(messageText.frame.origin.x, messageText.frame.origin.y, stringSize.width+20, stringSize.height+3);
@@ -707,9 +709,8 @@ NSComparisonResult dateSort(NSString *s1, NSString *s2, void *context) {
 }
 - (IBAction)popView:(id)sender
 {
-    [APPDELEGATE disconnect];
     Database *objDatabase = [Database sharedObject];
-    
+
     from = _myXmppID;
     to = _oppennetXmppID;
     NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
@@ -740,6 +741,10 @@ NSComparisonResult dateSort(NSString *s1, NSString *s2, void *context) {
     if (isUpdated) {
         NSLog(@"Table Update successfully");
     }
+
+    
+    [APPDELEGATE disconnect];
+    
     
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -820,7 +825,9 @@ NSComparisonResult dateSort(NSString *s1, NSString *s2, void *context) {
              
              [appdelegateInstance hideHUD];
              
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
+
+//             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];

@@ -148,9 +148,8 @@
          else
          {
              [appdelegateInstance hideHUD];
-//             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//             [alert show];
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
+
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];
@@ -439,9 +438,7 @@
          else
          {
              [appdelegateInstance hideHUD];
-//             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//             [alert show];
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];
@@ -569,9 +566,7 @@
          else
          {
              [appdelegateInstance hideHUD];
-//             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//             [alert show];
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];
@@ -621,9 +616,7 @@
          else
          {
              [appdelegateInstance hideHUD];
-             //             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-             //             [alert show];
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];
@@ -644,7 +637,8 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    
+    AppDelegate *appd= (AppDelegate *)[UIApplication sharedApplication].delegate;
+
     
     if (alertView.tag==100)
     {
@@ -667,9 +661,15 @@
             [self upgradeTheUser];
         }
     }
+    if (alertView.tag == 7005)
+    {
+        [appd deleteAccount:self];
+        [appd deleteAccount:self];
+        
+    }
+
     
     if (alertView.tag==1234) {
-        AppDelegate *appd= (AppDelegate *)[UIApplication sharedApplication].delegate;
         [appd LogoutFromApp:self];
     }
     
@@ -789,9 +789,10 @@
              if ([str isEqualToString:@"0"] )
              {
                  if (MaintainApiBool==YES) {
-//                 UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Account deleted successfully." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//                 [alert show];
-                     [constant alertViewWithMessage:@"Account deleted successfully."withView:self];
+                 UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Account deleted successfully." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                     alert.tag = 7005;
+                 [alert show];
+//                     [constant alertViewWithMessage:@"Account deleted successfully."withView:self];
                      [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userid"];
                      [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userTypeString"];
                      [[NSUserDefaults standardUserDefaults]synchronize];
@@ -829,9 +830,7 @@
          {
              
              [appdelegateInstance hideHUD];
-//             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//             [alert show];
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];

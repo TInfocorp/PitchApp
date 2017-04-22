@@ -76,7 +76,7 @@ static sqlite3_stmt *updateStmt = nil;
 -(BOOL)initializeWithSqlite:(NSString *)sqliteFilename
 {
 	self.dbPath = [Database getDBPath:sqliteFilename];
-	
+
 	if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK)
 		return YES;
 	else

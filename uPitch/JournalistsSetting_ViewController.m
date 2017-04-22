@@ -173,9 +173,7 @@
          else
          {
              [appdelegateInstance hideHUD];
-//             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//             [alert show];
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
              [self setScroll];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
@@ -561,9 +559,7 @@
          else
          {
              [appdelegateInstance hideHUD];
-//             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//             [alert show];
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];
@@ -1258,9 +1254,7 @@
          else
          {
              [appdelegateInstance hideHUD];
-//             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//             [alert show];
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];
@@ -1357,7 +1351,8 @@
     [alert show];
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
+    AppDelegate *appd= (AppDelegate *)[UIApplication sharedApplication].delegate;
+
     if (alertView.tag==100)
     {
         if (buttonIndex==0) {
@@ -1368,9 +1363,13 @@
            [self runApi];
         }
     }
+    if (alertView.tag == 7005)
+    {
+        [appd deleteAccount:self];
+        [appd deleteAccount:self];
 
+    }
     if (alertView.tag==1234) {
-        AppDelegate *appd= (AppDelegate *)[UIApplication sharedApplication].delegate;
         [appd LogoutFromApp:self];
     }
 }
@@ -1396,16 +1395,16 @@
              NSString*str=[NSString stringWithFormat:@"%@",[response valueForKey:@"error"]];
              if ([str isEqualToString:@"0"] )
              {
-//                 UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Account deleted successfully." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//                 [alert show];
-                 [constant alertViewWithMessage:@"Account deleted successfully."withView:self];
+                 UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Account deleted successfully." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                 alert.tag = 7005;
+                 [alert show];
+//                 [constant alertViewWithMessage:@"Account deleted successfully."withView:self];
                  [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userid"];
                  [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userTypeString"];
                  [[NSUserDefaults standardUserDefaults]setObject:@"loggedout" forKey:@"LoginStatus"];
                  [[NSUserDefaults standardUserDefaults]synchronize];
                  
-                 UINavigationController *frontNavigationController = (id)self.revealViewController.frontViewController;
-                 [frontNavigationController.navigationController popToRootViewControllerAnimated:YES];
+//                 AppDelegate *appd= (AppDelegate *)[UIApplication sharedApplication].delegate;
              }
              else if ([str isEqualToString:@"10"] )
              {
@@ -1417,9 +1416,7 @@
          else
          {
              [appdelegateInstance hideHUD];
-//             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//             [alert show];
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];
@@ -1568,9 +1565,9 @@
              if ([str isEqualToString:@"0"] )
              {
 
-//                     UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Request submitted successfully." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//                     [alert show];
-                 [constant alertViewWithMessage:@"Request submitted successfully."withView:self];
+                     UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Request submitted successfully." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                     [alert show];
+//                 [constant alertViewWithMessage:@"Request submitted successfully."withView:self];
                     emailTextField.text =@"";
                      messageTextView.text =@"";
                      messageLabel.hidden=NO;
@@ -1593,9 +1590,7 @@
          {
              
              [appdelegateInstance hideHUD];
-//             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//             [alert show];
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
 
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }

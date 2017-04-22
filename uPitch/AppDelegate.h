@@ -116,5 +116,6 @@
 @property (strong, nonatomic) NSString *databasePath;
 @property (nonatomic) sqlite3 *contactDB;
 -(void)LogoutFromApp:(UIViewController *)view;
+-(void)deleteAccount:(UIViewController *)view;
 @end
 

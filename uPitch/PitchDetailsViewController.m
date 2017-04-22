@@ -811,8 +811,7 @@
          else
          {
              [appdelegateInstance hideHUD];
-             UIAlertView*alert12=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            [alert12 show];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];
@@ -1001,9 +1000,7 @@ viewIndicator.hidden=YES;
          else
          {
              [appdelegateInstance hideHUD];
-//             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:nil message:@"Connectivity levels low. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//             [alert show];
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];

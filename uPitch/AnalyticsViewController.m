@@ -154,8 +154,9 @@
          else
          {
              [appdelegateInstance hideHUD];
+             [constant AlertMessageWithString:@"Connectivity levels low. Please try again." andWithView:self.view];
 
-             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
+//             [constant alertViewWithMessage:@"Connectivity levels low. Please try again."withView:self];
              NSLog(@"Error returned:%@",[error localizedDescription]);
          }
      }];
