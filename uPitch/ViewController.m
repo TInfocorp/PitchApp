@@ -205,7 +205,7 @@
         
         ProfileViewController*ctl;
         ctl=[self.storyboard instantiateViewControllerWithIdentifier:@"profileController"];
-        //ctl.comeTag=@"Prof";
+        ctl.statusLogin=@"firstLogin";
         
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:ctl];
         [navController setViewControllers: @[ctl] animated: YES];

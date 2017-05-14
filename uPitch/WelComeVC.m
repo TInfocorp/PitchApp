@@ -1,8 +1,7 @@
 //
 //  WelComeVC.m
-//  Happz App
 //
-//  Created by roza on 23/12/14.
+//  Created by KandhalAB on 23/12/14.
 //  Copyright (c) 2014 INX. All rights reserved.
 //
 
@@ -90,6 +89,10 @@ typedef enum ScrollDirection
     }
     scrollView.bounces = YES;
 
+}
+- (BOOL) prefersStatusBarHidden
+{
+    return YES;
 }
 
 

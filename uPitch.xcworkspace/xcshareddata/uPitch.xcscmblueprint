@@ -1,16 +1,18 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "69bcbf57-8026-478e-80c4-bcab143a8baf++6781",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "017CF09254E2A73C60F215D2B8DB4187F74E4859",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "69bcbf57-8026-478e-80c4-bcab143a8baf++6781" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "017CF09254E2A73C60F215D2B8DB4187F74E4859" : 9223372036854775807,
     "A35CF514-51A4-41DD-87A8-0968B7DB455C" : 0,
     "69bcbf57-8026-478e-80c4-bcab143a8baf++6781" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "46DBDE26-0176-420D-83B9-6CEE1687638C",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "017CF09254E2A73C60F215D2B8DB4187F74E4859" : "UpitchIphone\/",
     "A35CF514-51A4-41DD-87A8-0968B7DB455C" : "upitch_git16:04:15",
     "69bcbf57-8026-478e-80c4-bcab143a8baf++6781" : "XMPPUpitch_v1.1%202_pach\/"
   },
@@ -18,6 +20,11 @@
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "uPitch.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/KandhalAB\/upitch.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "017CF09254E2A73C60F215D2B8DB4187F74E4859"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/192.168.1.241\/svn\/upitch_iOS",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",

@@ -31,7 +31,7 @@
 @end
 
 @implementation ProfileViewController
-@synthesize userIDShowProfile,comeFromSring;
+@synthesize userIDShowProfile,comeFromSring,statusLogin;
 -(void)sendNotification{
     
   
@@ -102,7 +102,24 @@
                      strProfileComplete=@"complete";
                      [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:KEY_PROFILE_TAG];
                  }else{
+                     if ([[[NSUserDefaults standardUserDefaults]valueForKey:KEY_PROFILE_TAG]isEqualToString:@"0"])
+                     {
+                         
+                         userFirstNameString = holdFirstname ;
+                          userLastNameString = holdlLastName ;
+                          companyNameString = holdComanayName;
+                         designationNameString =  holdPosition ;
+//                         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//                         ProfileCellTableViewCell* cellObj1=(ProfileCellTableViewCell*)[tableVw cellForRowAtIndexPath:indexPath];
+//                         userFirstNameString = [cellObj1.firstNameText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//                         userLastNameString = [cellObj1.lastNameText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//                         companyNameString = [cellObj1.companyNameText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//                         designationNameString = [cellObj1.designationNameText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+
+                     }
+                     
                      [[NSUserDefaults standardUserDefaults]setObject:@"0" forKey:KEY_PROFILE_TAG];
+
                  }
                  
                  if ([userIDShowProfile length]==0){
@@ -156,10 +173,15 @@
                  
                  userImageUrl = [NSString stringWithFormat:@"%@",[[[response valueForKey:@"data"] valueForKey:@"User"] valueForKey:@"photo"]];
                  if ([[[[response valueForKey:@"data"] valueForKey:@"User"] valueForKey:@"photo"] isEqualToString:@""]|| [[[[response valueForKey:@"data"] valueForKey:@"User"] valueForKey:@"photo"] length]==0) {
+                    
                      [userImageView setImage:[UIImage imageNamed:@"userDefault.jpg"]];
                  }
                  else{
+
                      [userImageView setImageWithURL:[NSURL URLWithString:userImageUrl] placeholderImage:[UIImage imageNamed:@"userDefault.jpg"] imagesize:CGSizeMake(400, 400)];
+                     if (holdImage != nil)
+                     userImageView.image = holdImage;
+
                  }
                  
                  userImageView.layer.cornerRadius = userImageView.frame.size.height/2;
@@ -169,11 +191,16 @@
                  
                  for (NSString *key in [innerDict allKeys])
                  {
-                     if ([[innerDict valueForKey:key] isKindOfClass:[NSDictionary class]])
-                     {
-                     }
-                     else if ([[innerDict valueForKey:key] isKindOfClass:[NSMutableArray class]]){
-                         
+//                     NSLog(@"%@",[innerDict valueForKey:key]);
+//                     
+//                     if ([[innerDict valueForKey:key] isKindOfClass:[NSDictionary class]])
+//                     {
+//                         NSLog(@"%@",innerDict);
+//                     }
+//                     else if ([[innerDict valueForKey:key] isKindOfClass:[NSMutableArray class]])
+//
+                   //  {
+                     
                          if ([key isEqualToString:@"User_Connections"]) {
                              
                              profileObjectclass *profileObject=[profileObjectclass new];
@@ -233,7 +260,7 @@
                              
                          }
                          
-                     }
+                     
                  }
                  int counter =0 ;
                  for (int k=0; k<titleHeaderArray.count; k++) {
@@ -490,6 +517,7 @@
     [titleHeaderArray replaceObjectAtIndex:1 withObject:@"Experience"];
     
     appdelegateInstance = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+   
     [self getUserData];
     tableVw.delegate = nil;
     tableVw.dataSource = nil;
@@ -509,7 +537,19 @@
     //NSIndexPath *indexPath = [tableVw indexPathForRowAtPoint:buttonPosition];
     AddUserProfileViewController*obj;
     obj=[self.storyboard instantiateViewControllerWithIdentifier:@"addUserData"];
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    holdFirstname = cellObj.firstNameText.text;
+    holdlLastName = cellObj.lastNameText.text;
+    holdComanayName = cellObj.companyNameText.text;
+    holdPosition = cellObj.designationNameText.text;
+    holdImage = cellObj.userImageViewSelf.image;
     
+//    ProfileCellTableViewCell* cellObj1=(ProfileCellTableViewCell*)[tableVw cellForRowAtIndexPath:indexPath];
+//    userFirstNameString = [cellObj1.firstNameText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//    userLastNameString = [cellObj1.lastNameText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//    companyNameString = [cellObj1.companyNameText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//    designationNameString = [cellObj1.designationNameText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//
     if ([btn tag]==1) {
         obj.headerString = @"1";
         obj.editString  = @"1";
@@ -670,6 +710,8 @@
         if ([userImageUrl length]==0)
         {
             [cellObj.userImageViewSelf setImage:[UIImage imageNamed:@"userDefault.jpg"]];
+          if (holdImage !=nil)
+            cellObj.userImageViewSelf.image = holdImage;
         }
         else
         {

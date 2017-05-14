@@ -42,6 +42,8 @@
     UIActionSheet*actionSheet1;
     ProfileCellTableViewCell *cellObj;
      UIImage *imageUser ;
+    NSString *holdFirstname,*holdlLastName,*holdComanayName,*holdPosition;
+    UIImage *holdImage;
     NSString*userFirstNameString,*userLastNameString,*companyNameString,*designationNameString,*userImageUrl;
     __weak IBOutlet UIButton *logoutButton;
     __weak IBOutlet UILabel *lblReason;
@@ -65,5 +67,7 @@
 @property(nonatomic,strong) NSString*comeFromSring;
 
 @property(nonatomic,strong) NSString *comeTag;
+@property(nonatomic,strong) NSString *statusLogin;
+
 
 @end
