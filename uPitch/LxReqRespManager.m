@@ -280,7 +280,7 @@ void(^onCallBackForUrlPostImageRequest)(id response,NSError *error);
         AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
         
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        manager.requestSerializer.timeoutInterval = 60;
+        manager.requestSerializer.timeoutInterval = 400;
         if (!self.activtyText)
         {
             self.activtyText=@"";

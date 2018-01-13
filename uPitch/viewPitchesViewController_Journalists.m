@@ -233,6 +233,7 @@
                     nil];
     }
     NSLog(@"%@",strWebService);
+    NSLog(@"%@",dictParams);
     [rrManager requestAPIWithURL:strWebService withParameters:dictParams withCallBackHandler:^(id response, NSError *error)
      {
          if (!error)

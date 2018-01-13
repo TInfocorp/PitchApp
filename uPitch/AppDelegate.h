@@ -50,7 +50,6 @@
     BOOL *Flag;
     
     
-    
 @private
     XMPPStream *xmppStream;
     XMPPReconnect *xmppReconnect;

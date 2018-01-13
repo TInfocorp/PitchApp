@@ -339,7 +339,9 @@
     emailTextField.inputAccessoryView=toolBar;
     messageTextView.inputAccessoryView=toolBar;
 //    arrLocal=[[NSArray alloc]initWithObjects:@"Local",@"USA",@"Canada",@"North America",nil];
-   arrLocal=[[NSArray alloc]initWithObjects:@"USA",@"Canada",@"North America",nil];
+    
+    //MHT, added as per request
+   arrLocal=[[NSArray alloc]initWithObjects:@"USA",@"Canada",@"North America",@"NZ", @"South Africa", @"UK", @"Australia", nil];
 
     appdelegateInstance = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     

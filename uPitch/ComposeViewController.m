@@ -195,7 +195,8 @@
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
         self.navigationController.interactivePopGestureRecognizer.delegate = self;
     }
-     arrLocal=[[NSArray alloc]initWithObjects:@"USA",@"Canada",@"North America",nil];
+    //MT- Initial requirement of adding region to iOS app
+     arrLocal=[[NSArray alloc]initWithObjects:@"USA", @"Canada", @"North America", @"NZ", @"South Africa", @"UK", @"Australia", nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"resignKeyBoard" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sideView:) name:@"resignKeyBoard" object:nil];
     
